@@ -1,0 +1,17 @@
+{
+  "defaultSchema": "db1",
+  "schemas": [
+    {
+      "factory": "org.apache.calcite.adapter.jdbc.JdbcSchema$Factory",
+      "name": "db1",
+      "operand": {
+        "jdbcDriver": "com.mysql.jdbc.Driver",
+        "jdbcPassword": "123456",
+        "jdbcUrl": "jdbc:mysql://192.168.0.233:3306/dolphinscheduler",
+        "jdbcUser": "root"
+      },
+      "type": "custom"
+    }
+  ],
+  "version": "1.0"
+}

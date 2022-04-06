@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "defaultSchema": "tutorial",
+  "schemas": [ {
+    "name": "tutorial",
+    "type": "custom",
+    "factory": "com.joe.factory.TutorialSchemaFactory",
+    "operand": {
+      "tables": [
+        {
+          "ddl": "H:\\Git\\springboot-calcite\\src\\main\\resources/user/user.json",
+          "data": "H:\\Git\\springboot-calcite\\src\\main\\resources/user/user.txt"
+        },{
+          "ddl": "H:\\Git\\springboot-calcite\\src\\main\\resources/role/role.json",
+          "data": "H:\\Git\\springboot-calcite\\src\\main\\resources/role/role.txt"
+        }
+      ]
+    }
+  } ]
+}
