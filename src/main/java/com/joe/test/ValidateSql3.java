@@ -10,14 +10,12 @@ import org.apache.calcite.sql.SqlNode;
 import org.apache.calcite.sql.SqlSelect;
 import org.apache.calcite.sql.dialect.OracleSqlDialect;
 import org.apache.calcite.sql.fun.SqlStdOperatorTable;
-import org.apache.calcite.sql.parser.SqlParseException;
 import org.apache.calcite.sql.parser.SqlParser;
 import org.apache.calcite.sql.type.SqlTypeFactoryImpl;
 import org.apache.calcite.sql.validate.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -39,7 +37,7 @@ public class ValidateSql3 {
             // 创建解析器
             SqlParser parser = SqlParser.create("", mysqlConfig);
             // Sql语句
-            String sql = "SELECT * FROM t_ds_user where id = 1 order by id2";
+            String sql = "SELECT * FROM t_ds_user where id = 1 order by id";
             // 解析sql
             SqlNode sqlNode = parser.parseQuery(sql);
             // 还原某个方言的SQL
@@ -69,8 +67,7 @@ public class ValidateSql3 {
             for (SqlMoniker sqlMoniker : sqlMonikerList) {
                 System.out.println(sqlMoniker.id());
             }
-            System.out.println(namespace);
-            System.out.println(namespace.fieldExists("nameCC"));
+            System.out.println(namespace.fieldExists("update_time"));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
