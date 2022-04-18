@@ -70,7 +70,7 @@ public class ValidateSql2 {
             SqlValidator validator = SqlValidatorUtil.newValidator(SqlStdOperatorTable.instance(),
                     calciteCatalogReader,
                     factory,
-                    SqlConformanceEnum.ORACLE_12);
+                    SqlValidator.Config.DEFAULT);
 
             SqlNode validate = validator.validate(sqlNode);
             System.out.println(validate.toString());

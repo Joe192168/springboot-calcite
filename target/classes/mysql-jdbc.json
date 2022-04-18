@@ -5,10 +5,10 @@
       "factory": "org.apache.calcite.adapter.jdbc.JdbcSchema$Factory",
       "name": "db1",
       "operand": {
-        "jdbcDriver": "com.mysql.jdbc.Driver",
-        "jdbcPassword": "123456",
-        "jdbcUrl": "jdbc:mysql://192.168.0.233:3306/dolphinscheduler",
-        "jdbcUser": "root"
+        "jdbcDriver": "org.postgresql.Driver",
+        "jdbcUser": "gpadmin",
+        "jdbcPassword": "gpadmin123",
+        "jdbcUrl": "jdbc:postgresql://192.168.0.233:5432/edw"
       },
       "type": "custom"
     }

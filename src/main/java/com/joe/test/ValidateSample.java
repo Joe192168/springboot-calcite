@@ -58,7 +58,7 @@ public class ValidateSample {
 
         // 校验（包括对表名，字段名，函数名，字段类型的校验。）
         SqlValidator validator = SqlValidatorUtil.newValidator(SqlStdOperatorTable.instance(),
-                calciteCatalogReader, factory, SqlConformanceEnum.DEFAULT
+                calciteCatalogReader, factory, SqlValidator.Config.DEFAULT
         );
         // 校验后的SqlNode
         SqlNode validateSqlNode = validator.validate(sqlNode);

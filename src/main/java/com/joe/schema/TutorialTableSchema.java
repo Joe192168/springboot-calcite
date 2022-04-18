@@ -1,6 +1,5 @@
 package com.joe.schema;
 
-import com.google.common.collect.Maps;
 import com.joe.entity.TutorialTable;
 import lombok.Data;
 import lombok.NonNull;
@@ -8,6 +7,7 @@ import org.apache.calcite.schema.Table;
 import org.apache.calcite.schema.impl.AbstractSchema;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -40,7 +40,7 @@ public class TutorialTableSchema extends AbstractSchema implements Serializable 
      */
     @Override
     protected Map<String, Table> getTableMap() {
-        Map<String, Table> tableMap = Maps.newHashMap();
+        Map<String, Table> tableMap = new HashMap<>();
         for (TutorialTable table : this.tableList) {
             tableMap.put(table.getName(), table);
         }
