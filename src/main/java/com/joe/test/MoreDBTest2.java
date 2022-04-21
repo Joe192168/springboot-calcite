@@ -41,7 +41,9 @@ public class MoreDBTest2 {
         Connection connection = DriverManager.getConnection("jdbc:calcite:", info);
         Statement statement = connection.createStatement();
         // Sql语句
-        String sql = "SELECT s.practice_unit_name,c.user_name FROM db1.t_user_practice AS s join db2.t_users AS c on s.user_id = c.id";
+        String sql = "SELECT c.user_name,s.practice_unit_name,count(s.id) as ct " +
+                " FROM db1.t_user_practice AS s join db2.t_users AS c on s.user_id = c.id " +
+                " where s.practice_scope = '1' group by c.user_name,s.practice_unit_name";
         ResultSet resultSet = statement.executeQuery(sql);
         final StringBuilder buf = new StringBuilder();
         while (resultSet.next()) {

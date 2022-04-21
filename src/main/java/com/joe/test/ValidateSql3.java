@@ -53,15 +53,15 @@ public class ValidateSql3 {
             // 解析配置 - mysql设置
             SqlParser.Config mysqlConfig = SqlParser.configBuilder().setLex(Lex.MYSQL).build();
             // 创建解析器
-            SqlParser parser = SqlParser.create("",mysqlConfig);
+            SqlParser parser = SqlParser.create("");
             // Sql语句
-            String sql = "SELECT * FROM t_user where id = 1 order by id";
+            String sql = "select * from t_user where id = 1 order by id";
             // 解析sql
             SqlNode sqlNode = parser.parseQuery(sql);
             // 还原某个方言的SQL
             //System.out.println(sqlNode.toSqlString(OracleSqlDialect.DEFAULT));
             // sql validate（会先通过Catalog读取获取相应的metadata和namespace）
-            SqlTypeFactoryImpl factory = new SqlTypeFactoryImpl(RelDataTypeSystem.DEFAULT);
+            /*SqlTypeFactoryImpl factory = new SqlTypeFactoryImpl(RelDataTypeSystem.DEFAULT);
             CalciteCatalogReader calciteCatalogReader = new CalciteCatalogReader(
                     prepareContext.getRootSchema(),
                     prepareContext.getDefaultSchemaPath(),
@@ -86,10 +86,10 @@ public class ValidateSql3 {
                 System.out.println(sqlMoniker.id());
             }
             //检查字段是否存在
-            System.out.println(namespace.fieldExists("id"));
+            System.out.println(namespace.fieldExists("id"));*/
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
+            e.getCause();
+            System.out.println(e.getCause().fillInStackTrace().getMessage());
         }
     }
 
